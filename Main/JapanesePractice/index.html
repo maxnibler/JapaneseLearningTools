@@ -2,21 +2,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Minimal JS front-end App Example</title>
+  <title>Ripiito</title>
 </head>
 <body>
-  <audio id = "testAudio">
-      <source src="audio/test.mp3" type="audio/mpeg">
+  <audio id = "alertSound">
+      <source src="audio/beep alert.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
   </audio>
   <script src="src/Audio.js"></script>
-  <h1>Public Library</h1>
-  <h2>An Example of a Minimal JavaScript front-end App</h2>
-  <p>This app supports the following operations:</p>
+  <h1>Ripiito</h1>
+  <h2>A tool for Japanese pronunciation</h2>
   <menu>
-    <li><button type="button" onclick="Audio.playTestAudio()">Play Test Audio</button></li>
-    <li><button type="button" onclick="Audio.pauseTestAudio()">Pause Test Audio</button></li>
+    <li><button type="button" onclick="Audio.newAudioSample()">New Audio Sample</button></li>
+    <li><script type="text/javascript" src="https://forvo.com/_ext/ext-prons.js?id=2627047" charset="utf-8"></script></li>
     <li><button type="button" onclick="Audio.recordMic()">Record from mic</button></li>
+    <li><button type="button" onclick="Audio.playMic()">Play Recorded Audio</button></li>
   </menu>
+  <p><a href="https://forvo.com/" title="Pronunciations by Forvo"><img src="https://api.forvo.com/byforvoblue.gif" width="120" height="40" alt="Pronunciations by Forvo" style="border:0" /></a></p>
 </body>
 </html> 
