@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>Ripiito</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
   <audio id = "alertSound">
@@ -13,8 +14,8 @@
   <h1>Ripiito</h1>
   <h2>A tool for Japanese pronunciation</h2>
   <menu>
-    <li><button type="button" onclick="Audio.newAudioSample()">New Audio Sample</button></li>
-    <li><script type="text/javascript" src="https://forvo.com/_ext/ext-prons.js?id=2627047" charset="utf-8"></script></li>
+    <li><button type="button" id="newAudioButton">New Audio Sample</button></li>
+    <li><script id="sampleScript" type="text/javascript" charset="utf-8" Samesite="None" Secure></script></li>
     <li><button type="button" onclick="Audio.recordMic()">Record from mic</button></li>
     <li><button type="button" onclick="Audio.playMic()">Play Recorded Audio</button></li>
   </menu>

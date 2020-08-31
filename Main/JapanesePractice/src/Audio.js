@@ -2,8 +2,14 @@ var audioSample = document.getElementById("alertSound");
 var alertSound = document.getElementById("alertSound");
 var voiceMP3;
 
+$(document).ready(function(){
+    $("#newAudioButton").click(function(){
+        $("#sampleScript").attr("src", "https://forvo.com/_ext/ext-prons.js?id=3216134");
+    });
+});
+
 Audio.newAudioSample = function (){
-    //audioSample.play();
+    document.getElementById("sample").innerHTML = '<script type="text/javascript" src="https://forvo.com/_ext/ext-prons.js?id=3216134" charset="utf-8"/>';
 };
 
 Audio.recordMic = function (){
