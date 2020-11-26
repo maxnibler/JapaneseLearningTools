@@ -12,11 +12,13 @@ import kana from './data/kana.json';
  */
 function App() {
   const character = kanji[1].character;
-  const akana = kana.katakana['a'];
+  const akana = kana.katakana['n'];
+  const nhira = kana.hiragana['n'];
   return (
     <div>
       {character}
       {akana}
+      {nhira}
     </div>
   );
 }
