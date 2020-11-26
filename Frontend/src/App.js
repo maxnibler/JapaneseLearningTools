@@ -1,5 +1,5 @@
 import React from 'react';
-import emails from '../data/kanji.json';
+import emails from './data/kanji.json';
 
 /**
  * Simple component with no state.
@@ -10,7 +10,7 @@ import emails from '../data/kanji.json';
  * @return {object} JSX
  */
 function App() {
-  const jpChar = 'h';
+  const jpChar = '\u4e21';
   return (
     <div>
       {jpChar}
