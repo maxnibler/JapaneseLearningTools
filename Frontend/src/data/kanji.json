@@ -1,7 +1,12 @@
-[
-  {
+{
+  "0": {
     "character": "kanji",
     "meanings": ["characters", "from", "chinese"],
     "readings": ["ka", "n", "ji"]
+  },
+  "1": {
+    "character": "\u4e21",
+    "meanings": ["both"],
+    "readings": ["ka", "n", "ji"]
   }
-]
+}
