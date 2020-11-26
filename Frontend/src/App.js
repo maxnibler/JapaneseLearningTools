@@ -1,5 +1,6 @@
 import React from 'react';
 import kanji from './data/kanji.json';
+import kana from './data/kana.json';
 
 /**
  * Simple component with no state.
@@ -10,12 +11,12 @@ import kanji from './data/kanji.json';
  * @return {object} JSX
  */
 function App() {
-  const jpChar = '\u4e21';
   const character = kanji[1].character;
+  const akana = kana.katakana['a'];
   return (
     <div>
       {character}
-      {jpChar}
+      {akana}
     </div>
   );
 }
