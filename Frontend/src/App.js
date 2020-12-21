@@ -1,24 +1,39 @@
+/**
+ * Code borrowed In class example
+ */
+
 import React from 'react';
-import kanji from './data/kanji.json';
-import kana from './data/kana.json';
+import {makeStyles} from '@material-ui/core/styles';
+import DimensionsProvider from './DimensionsProvider.js';
+import MobileView from './MobileView';
+import DesktopView from './DesktopView';
+import ResponsiveLayout from './ResponsiveLayout';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+  },
+}));
 
 /**
  * Simple component with no state.
  *
- * See the basic-react from lecture 11 for an example of adding and
- * reacting to changes in state and lecture 16 for details on Material-UI
- *
  * @return {object} JSX
  */
 function App() {
-  const character = kanji[1].character;
-  const akana = kana.katakana['n'];
-  const nhira = kana.hiragana['n'];
+  const classes = useStyles();
   return (
-    <div>
-      {character}
-      {akana}
-      {nhira}
+    <div className={classes.root}>
+      <DimensionsProvider>
+        <ResponsiveLayout
+          renderDesktop={() => (
+            <DesktopView/>
+          )}
+          renderMobile={() => (
+            <MobileView/>
+          )}
+        />
+      </DimensionsProvider>
     </div>
   );
 }
