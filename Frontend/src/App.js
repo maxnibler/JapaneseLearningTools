@@ -6,7 +6,7 @@ import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import DimensionsProvider from './DimensionsProvider.js';
 import MobileView from './MobileView';
-import DesktopView from './DesktopView';
+// import DesktopView from './DesktopView';
 import ResponsiveLayout from './ResponsiveLayout';
 
 const useStyles = makeStyles((theme) => ({
@@ -27,7 +27,7 @@ function App() {
       <DimensionsProvider>
         <ResponsiveLayout
           renderDesktop={() => (
-            <DesktopView/>
+            <MobileView/>
           )}
           renderMobile={() => (
             <MobileView/>
