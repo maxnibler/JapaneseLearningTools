@@ -8,6 +8,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Drawer from '@material-ui/core/Drawer';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import Box from '@material-ui/core/Box';
 
 
 const drawerWidth = 240;
@@ -33,10 +35,16 @@ const useStyles = makeStyles((theme) => ({
     }),
   },
   menuButton: {
-    marginRight: 36,
+    marginRight: 0,
   },
   menuButtonHidden: {
     display: 'none',
+  },
+  centerLogo: {
+    flexGrow: 1,
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
   },
 }));
 
@@ -70,6 +78,14 @@ function homeView() {
                 open && classes.menuButtonHidden)}
           >
             <MenuIcon />
+          </IconButton>
+          <Box className={classes.centerLogo}>
+            <Typography>
+              Insert Name
+            </Typography>
+          </Box>
+          <IconButton color="inherit">
+            <AccountCircleIcon/>
           </IconButton>
         </Toolbar>
       </AppBar>
