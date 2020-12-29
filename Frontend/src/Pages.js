@@ -1,10 +1,10 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import { Box, Paper, Typography } from '@material-ui/core';
+import {List, ListItem, ListItemText} from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: window.innerHeight,
     width: window.innerWidth,
   },
   topRoot: {
@@ -39,6 +39,26 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 /**
+ * @param {Array} list
+ * @return {JSX}
+ */
+function listStrings(list) {
+  return (
+    <div>
+      <List>
+        {list.map((text, index) => (
+          <ListItem
+            button
+            key={index}
+          >
+            <ListItemText primary={text} />
+          </ListItem>
+        ))}
+      </List>
+    </div>
+  )
+}
+/**
  * @param {string} character
  * @return {JSX}
  */
@@ -50,16 +70,16 @@ function kanjiDisplay(character) {
       <Box className={classes.topRoot}>
         <Paper elevation={2} className={classes.paperKanji}>
           <Typography className={classes.kanji}>
-            {character}
+            {character.code}
           </Typography>
         </Paper>
       </Box>
       <Box className={classes.bottomRoot}>
         <Paper className={classes.paperCard}>
-          pronuciation
+          {listStrings(character.meanings)}
         </Paper>
         <Paper className={classes.paperCard}>
-          pronuciation
+        {listStrings(character.readings)}
         </Paper>
       </Box>
     </div>
@@ -72,9 +92,14 @@ function kanjiDisplay(character) {
  * @return {JSX}
  */
 function pageSelect(page, changePage) {
+  const character = {
+    code: '\u3042',
+    readings: ['a', 'A', 'aa'],
+    meanings: ['apple', 'fruit', 'able'],
+  }
   return (
     <div>
-      {kanjiDisplay('\u3042')}
+      {kanjiDisplay(character)}
     </div>
   );
 }
