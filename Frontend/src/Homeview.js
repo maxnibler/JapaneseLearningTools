@@ -10,6 +10,8 @@ import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import Box from '@material-ui/core/Box';
+import pageSelect from './Pages';
+import pageList from './PageList';
 
 
 const drawerWidth = 240;
@@ -46,6 +48,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
   },
+  appBarSpacer: theme.mixins.toolbar,
 }));
 
 
@@ -57,9 +60,14 @@ const useStyles = makeStyles((theme) => ({
 function homeView() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
+  const [page, setPage] = React.useState(0);
   const toggleDrawer = () => {
     setOpen(!open);
   };
+  const changePage = (pageIndex) => {
+    setPage(pageIndex);
+  }
+  const nameValue = 'Insert Name';
 
   return (
     <div>
@@ -81,7 +89,7 @@ function homeView() {
           </IconButton>
           <Box className={classes.centerLogo}>
             <Typography>
-              Insert Name
+              {nameValue}
             </Typography>
           </Box>
           <IconButton color="inherit">
@@ -98,12 +106,16 @@ function homeView() {
       >
         <div className={classes.toolbarHeader}>
           <Typography>
-            Insert Name
+            {nameValue}
           </Typography>
         </div>
         <Divider />
-        Taskbar
+        {pageList(page, changePage)}
       </Drawer>
+      <main>
+        <div className={classes.appBarSpacer} />
+        {pageSelect(page)}
+      </main>
     </div>
   );
 }
