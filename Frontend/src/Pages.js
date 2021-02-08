@@ -79,7 +79,7 @@ function kanjiDisplay(character) {
           {listStrings(character.meanings)}
         </Paper>
         <Paper className={classes.paperCard}>
-        {listStrings(character.readings)}
+          {listStrings(character.readings)}
         </Paper>
       </Box>
     </div>
